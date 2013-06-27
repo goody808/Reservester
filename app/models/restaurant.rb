@@ -1,0 +1,5 @@
+class Restaurant < ActiveRecord::Base
+  attr_accessible :address, :city, :description, :name, :phone_number, :state, :zip_code
+  validates :name, presence: true
+
+end
