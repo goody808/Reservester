@@ -7,7 +7,7 @@ class RestaurantTest < ActiveSupport::TestCase
 
   test "should not save restaurant without title" do
   	restaurant = Restaurant.new
-  	assert !restaurant.save
+  	assert !restaurant.save,  "Saved with post without a title"
   end
   
 end
