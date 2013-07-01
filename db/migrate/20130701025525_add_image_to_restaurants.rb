@@ -3,3 +3,4 @@ class AddImageToRestaurants < ActiveRecord::Migration
     add_column :restaurants, :image, :string
   end
 end
+s

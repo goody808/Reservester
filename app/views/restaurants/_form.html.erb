@@ -42,10 +42,14 @@
     </div>
   </div>
 
+  <h4>Image Upload</h4>
   <p>
     <%= f.file_field :image %>
   </p>  
-
+  <h4>Menu PDF Upload</h4>
+  <p>
+    <%= f.file_field :pdf_menu %>
+  </p>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.back")),
