@@ -22,6 +22,8 @@
           <dd><%= @restaurant.state %></dd>
           <dt><strong><%= model_class.human_attribute_name(:zip_code) %>:</strong></dt>
           <dd><%= @restaurant.zip_code %></dd>
+          <dt><strong><%= model_class.human_attribute_name(:menu) %>:</strong></dt>
+          <dd><%= link_to_if(@restaurant.pdf_menu?, "View menu", @restaurant.pdf_menu_url)%></dt>
       </div>  </dl>
   <div class = "row">
     <div class = "span9">  
