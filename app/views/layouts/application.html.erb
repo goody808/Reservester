@@ -5,10 +5,28 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  
 </head>
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Reservester</a>
+    <ul class="nav">
+      <li class="active"><a href="#">Home</a></li>
+      	<li><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+  </div>
+</div>
+
 <body>
-
-<%= yield %>
-
+	<div class = "container">
+		<div class = "row">
+			<div class = "span9"><%= yield %></div>
+			<div class = "span3">
+				<h2>About Us</h2>
+				<p>More about us</p>
+			</div>
+	</div>
+</div>
 </body>
 </html>
