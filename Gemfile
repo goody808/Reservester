@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 
-group :production do 
+group :production do 	
 	gem 'pg'
 end
 
@@ -31,10 +31,15 @@ group :assets do
 	gem "twitter-bootstrap-rails"
 end
 
+gem 'devise'
+
 gem 'jquery-rails'
 gem 'carrierwave'
 gem 'rmagick',  '~> 2.13.1'
 gem 'fog'
+
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
