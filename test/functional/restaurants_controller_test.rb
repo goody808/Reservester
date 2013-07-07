@@ -4,6 +4,12 @@ class RestaurantsControllerTest < ActionController::TestCase
 
 	setup do
 		@restaurant = restaurants(:one)
+		@owner = Owner.create!( 
+			email: 'owner@example.com',
+			password: 'MyPassword',
+			password_confirmation: 'MyPassword'
+			)
+		sign_in @owner
 	end
 
 	test "should get index" do 

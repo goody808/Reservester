@@ -7,21 +7,15 @@
   <%= csrf_meta_tags %>
   
 </head>
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="/">Reservester</a>
-    <ul class="nav">
-      <li class="active"><a href="#">Home</a></li>
-      	<li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-    </ul>
-  </div>
-</div>
+<%= render 'layouts/header'  %>
 
 <body>
 	<div class = "container">
 		<div class = "row">
-			<div class = "span9"><%= yield %></div>
+			<div class = "span9">
+      <%= render 'layouts/flash_message' %>
+      <%= yield %>
+      </div>
 			<div class = "span3">
 				<h2>About Us</h2>
 				<p>We love pizza Restaurants and we want you to love them too! Find your favorit spot, rank them, and add comments.</p>

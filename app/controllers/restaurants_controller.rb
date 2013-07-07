@@ -1,5 +1,7 @@
 class RestaurantsController < ApplicationController
 
+	before_filter :authenticate_owner!, except: [:index, :show]
+
 	def index 
 		@restaurants  = Restaurant.all
 	end
@@ -14,7 +16,7 @@ class RestaurantsController < ApplicationController
 
 	def create
 		@restaurant = Restaurant.new(params[:restaurant])
-
+		@restaurant.owner = current_owner
 		if @restaurant.save
 			redirect_to @restaurant
 		else 
@@ -24,16 +26,21 @@ class RestaurantsController < ApplicationController
 
 	def update
 		@restaurant = Restaurant.find(params[:id]) 
-
-		if @restaurant.update_attributes(params[:restaurant])
-			redirect_to @restaurant
-		else
-			render 'edit'
+		
+		if current_owner = @restaurant.owner 	
+			if @restaurant.update_attributes(params[:restaurant]) 
+				redirect_to @restaurant
+			else
+				render 'edit'
+			end
 		end
 	end 
 
 	def edit
 		@restaurant = Restaurant.find(params[:id])
+		if current_owner != @restaurant.owner
+			render 'show'
+		end 
 	end 
 
 	def destroy

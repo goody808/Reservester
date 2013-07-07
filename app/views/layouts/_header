@@ -1,0 +1,17 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="/">Reservester</a>
+    <ul class="nav">
+      <li class="active">
+        <a href="/">Home</a></li>
+      <% if owner_signed_in? %>
+        <li><%= link_to current_owner.name, '#' %></li>
+        <li><%= link_to 'Edit profile', edit_owner_registration_path %></li>
+        <li><%= link_to "Logout", destroy_owner_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "Sign up", new_owner_registration_path %></li>
+        <li><%= link_to "Login", new_owner_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
