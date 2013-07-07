@@ -8,33 +8,41 @@
     <div class = "span2">
       <dt><%= image_tag @restaurant.image_url(:masterhead) if @restaurant.image? %></dt>
     </div>
-    <div class = "span6"><dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-          <dd><%= @restaurant.name %></dd>
-          <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-          <dd><%= @restaurant.description %></dd>
-          <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
-          <dd><%= @restaurant.phone_number %></dd>
-          <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
-          <dd><%= @restaurant.address %></dd>
-          <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
-          <dd><%= @restaurant.city %></dd>
-          <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
-          <dd><%= @restaurant.state %></dd>
-          <dt><strong><%= model_class.human_attribute_name(:zip_code) %>:</strong></dt>
-          <dd><%= @restaurant.zip_code %></dd>
-      </div>  </dl>
+    <div class = "span6">
+      <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+      <dd><%= @restaurant.name %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+      <dd><%= @restaurant.description %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:phone_number) %>:</strong></dt>
+      <dd><%= @restaurant.phone_number %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+      <dd><%= @restaurant.address %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+      <dd><%= @restaurant.city %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+      <dd><%= @restaurant.state %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:zip_code) %>:</strong></dt>
+      <dd><%= @restaurant.zip_code %></dd>
+      <dt><strong><%= model_class.human_attribute_name(:menu) %>:</strong></dt>
+      <dd><%= link_to_if(@restaurant.pdf_menu?, "View menu", @restaurant.pdf_menu_url)%></dt>
+      <dt><strong><%= model_class.human_attribute_name(:owner) %>:</strong></dt>
+      <dd><%= @restaurant.owner.name %></dt>
+    </div>  
+</dl>
   <div class = "row">
     <div class = "span9">  
       <div class="form-actions">
         <%= link_to t('.back', :default => t("helpers.links.back")),
                     restaurants_path, :class => 'btn'  %>
-        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        <% if current_owner == @restaurant.owner  %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
                     edit_restaurant_path(@restaurant), :class => 'btn' %>
-        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                     restaurant_path(@restaurant),
                     :method => 'delete',
                     :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                     :class => 'btn btn-danger' %>
+        <%  end  %>         
       </div>
     </div>
   </div>
