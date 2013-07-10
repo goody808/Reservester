@@ -13,6 +13,8 @@ class ReservationsController < ApplicationController
 	end
 
 	def create 
+		@restaurant = Restaurant.find(params[:restaurant])
+		
 		@reservation = Reservation.find(params[:restaurant])
 
 		if @reservation.save
