@@ -1,6 +1,8 @@
 Reservester::Application.routes.draw do
   devise_for :owners
 
+  get '/dashboard', to: 'owners#dashboard'
+
   resources :owners do 
     resources :restaurants, :only => [:new, :create, :edit, :update, :show]
   end

@@ -1,7 +1,14 @@
 require 'test_helper'
 
 class OwnersControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+
+#makes sure all restaurants for a controller are pulled out
+test "has all restaurants"
+end
+
+test "has all reservations"
+ends
+
+
+
 end
