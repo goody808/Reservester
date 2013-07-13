@@ -1,5 +1,7 @@
 class ReservationsController < ApplicationController
 
+	before_filter :authenticate_owner!, :except => [:create, :update]
+
 	def index 
 		@reservations = Reservation.all
 	end
