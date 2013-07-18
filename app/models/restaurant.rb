@@ -6,6 +6,7 @@ class Restaurant < ActiveRecord::Base
   mount_uploader :pdf_menu, PdfMenuUploader
   belongs_to :owner
   has_many :reservations
+  has_and_belongs_to_many :catagory
   accepts_nested_attributes_for :reservations
 
 end
