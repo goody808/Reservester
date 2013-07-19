@@ -40,7 +40,6 @@ gem 'carrierwave'
 gem 'rmagick',  '~> 2.13.1'
 gem 'fog'
 
-
 gem 'simplecov', :require => false, :group => :test
 gem 'factory_girl_rails', :group => :test
 
