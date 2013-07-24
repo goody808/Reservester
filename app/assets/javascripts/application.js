@@ -14,3 +14,9 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(function() {
+	$("#restaurant_catagory_tokens").tokenInput("/catagory.json",  {
+		crossDomain: false
+	});
+});

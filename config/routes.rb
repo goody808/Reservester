@@ -13,6 +13,8 @@ Reservester::Application.routes.draw do
 
   resources :reservations, :except => [:new, :create]
 
+  resources :catagory, :only => [:index]
+
   root to: "welcome#index"
 
 end

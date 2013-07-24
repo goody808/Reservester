@@ -4,6 +4,10 @@ class RestaurantsController < ApplicationController
 	# before_filter :require_restaurant_owner_match! [:create, :edit ]
 	def index 
 		@restaurants  = Restaurant.all
+		respond_to do |format|
+			format.html
+			format.json	{ render :json => @restaurants.map(&:attributes) }
+		end
 	end
 
 	def show 
@@ -23,7 +27,7 @@ class RestaurantsController < ApplicationController
 		if @restaurant.save
 			redirect_to @restaurant
 		else 
-			render 'new'
+			render action: "new"
 		end 
 	end
 

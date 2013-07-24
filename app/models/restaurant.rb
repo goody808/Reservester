@@ -1,5 +1,5 @@
 class Restaurant < ActiveRecord::Base
-  attr_accessible :address, :city, :description, :name, :phone_number, :state, :zip_code, :image, :pdf_menu
+  attr_accessible :address, :city, :description, :name, :phone_number, :state, :zip_code, :image, :pdf_menu, :catagory_ids
 	validates :name, presence: true
 	validates :owner_id, presence: true
   mount_uploader :image, ImageUploader
@@ -8,5 +8,10 @@ class Restaurant < ActiveRecord::Base
   has_many :reservations
   has_and_belongs_to_many :catagory
   accepts_nested_attributes_for :reservations
+  attr_reader :catagory_tokens
+
+  def catagory_tokens=(ids)
+  	self.catagory_ids = ids.split(",")
+  end
 
 end

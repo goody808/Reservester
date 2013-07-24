@@ -1,5 +1,5 @@
 <%= render 'errors_restaurant_form' %>
-<%= form_for @restaurant, :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
+<%= form_for ([@owner, @restaurant]), :html => { :multipart => true, :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
@@ -9,7 +9,7 @@
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :description, :class => 'text_area' %>
+      <%= f.text_area :description, :class => 'text_area', :rows => 4 %>
     </div>
   </div>
   <div class="control-group">
@@ -43,17 +43,11 @@
     </div>
   </div>
   <div class="control-group">
-            <label class="control-label">Select:</label>
-        <div class="controls">
-        <% @catagories.each do |catagory| %>
-            <select>
-                <option value="1">Option 1</option>
-                <option value="2">Option 1</option>
-                <option value="3">Option 1</option>
-            </select>
-        </div>
-        </div>
-
+    <%= f.label :catagory_ids, "Category", :class => 'control-label' %>
+      <div class="controls">
+    <%= f.collection_select :catagory_ids, Catagory.order(:name), :id, :name, {}, {multiple: true} %>
+    </div>
+  </div>
     <h4>Image Upload</h4>
   <p>
     <%= f.file_field :image %>
@@ -63,7 +57,7 @@
     <%= f.file_field :pdf_menu %>
   </p>
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.submit :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.back")),
                 restaurants_path, :class => 'btn' %>
   </div>
