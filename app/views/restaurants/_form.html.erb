@@ -42,12 +42,14 @@
       <%= f.text_field :zip_code, :class => 'text_field' %>
     </div>
   </div>
+  
   <div class="control-group">
     <%= f.label :catagory_ids, "Category", :class => 'control-label' %>
       <div class="controls">
     <%= f.collection_select :catagory_ids, Catagory.order(:name), :id, :name, {}, {multiple: true} %>
     </div>
   </div>
+
     <h4>Image Upload</h4>
   <p>
     <%= f.file_field :image %>

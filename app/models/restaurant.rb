@@ -1,5 +1,5 @@
 class Restaurant < ActiveRecord::Base
-  attr_accessible :address, :city, :description, :name, :phone_number, :state, :zip_code, :image, :pdf_menu, :catagory_ids
+  attr_accessible :address, :city, :description, :name, :phone_number, :state, :zip_code, :image, :pdf_menu, :catagory_ids, :catagory_tokens
 	validates :name, presence: true
 	validates :owner_id, presence: true
   mount_uploader :image, ImageUploader

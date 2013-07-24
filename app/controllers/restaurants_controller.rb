@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
 		@restaurants  = Restaurant.all
 		respond_to do |format|
 			format.html
-			format.json	{ render :json => @restaurants.map(&:attributes) }
+			format.json	{ render :json => @restaurants.where("name like ?", "%#{params[:q]}%") }
 		end
 	end
 
@@ -18,6 +18,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def new
+		@owner = Owner.find(params[:owner_id])
 		@restaurant = Restaurant.new
 	end
 
