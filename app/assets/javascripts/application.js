@@ -18,7 +18,7 @@
 //= require_tree .
 
 $(function() {
-	$("#restaurant_catagory_tokens").tokenInput("/catagory.json",  {
+	$("#restaurant_category_tokens").tokenInput("/category.json",  {
 		crossDomain: false
 	});
 });

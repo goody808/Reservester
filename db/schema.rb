@@ -13,15 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20130717215232) do
 
-  create_table "catagories", :force => true do |t|
+  create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "catagories_restaurants", :id => false, :force => true do |t|
+  create_table "categories_restaurants", :id => false, :force => true do |t|
     t.integer "restaurant_id"
-    t.integer "catagory_id"
+    t.integer "category_id"
   end
 
   create_table "owners", :force => true do |t|

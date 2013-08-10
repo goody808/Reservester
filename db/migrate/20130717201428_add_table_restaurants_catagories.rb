@@ -1,8 +1,8 @@
-class AddTableRestaurantsCatagories < ActiveRecord::Migration
+class AddTableRestaurantscategories < ActiveRecord::Migration
   def change
-  	create_table :restaurants_catagories, id: false do |t|
+  	create_table :restaurants_categories, id: false do |t|
   		t.integer :restaurants_id
-  		t.integer :catagories_id 
+  		t.integer :categories_id 
   	end
   end
 

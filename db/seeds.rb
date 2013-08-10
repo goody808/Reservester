@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Catagory.delete_all		
+category.delete_all		
 
-Catagory.create!([
+category.create!([
 {name: 'Italian'},
 {name: 'Chinese'},
 {name: 'Japanese'},

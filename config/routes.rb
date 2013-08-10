@@ -1,4 +1,4 @@
-Reservester::Application.routes.draw do
+6Reservester::Application.routes.draw do
   devise_for :owners
 
   get '/dashboard', to: 'owners#dashboard'
@@ -13,7 +13,7 @@ Reservester::Application.routes.draw do
 
   resources :reservations, :except => [:new, :create]
 
-  resources :catagory, :only => [:index]
+  resources :category, :only => [:index]
 
   root to: "welcome#index"
 
