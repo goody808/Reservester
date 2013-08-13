@@ -37,7 +37,11 @@
   </tr>
   <tr> 
     <td><strong>Categories:</strong></td>
-    <td><%= @restaurant.category %></td>
+    <td>
+      <% @restaurant.category.each do |category| %>
+      <%= link_to( category.name + " ", category_path(category)) %>
+      <% end %>
+    </td>
   </tr>
 
 </table>

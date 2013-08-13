@@ -1,0 +1,7 @@
+<h1>Categories</h1>
+
+<ul>
+	<% @categories.each do |i| %>
+	<li><%= link_to(i.name + " (" + i.restaurants.count.to_s + ")", category_path(i)) %></li>
+	<% end %>
+</ul>	

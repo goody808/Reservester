@@ -1,0 +1,16 @@
+<h1><%= @category.name %></h1>
+
+<table class="table table-striped">
+	<thread>
+		<tr>
+			<th>Restaurant</th>
+			<th>Description</th>
+		</tr>
+		<% @restaurants.each do |i| %>
+		<tr>
+			<td><%= link_to(i.name, restaurant_path(i)) %></td>
+			<td><%= i.description %></td>
+		</tr>
+	</thread>
+</table>
+<% end %>

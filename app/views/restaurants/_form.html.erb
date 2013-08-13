@@ -46,7 +46,7 @@
   <div class="control-group">
     <%= f.label :category_ids, "Category", :class => 'control-label' %>
       <div class="controls">
-    <%= f.collection_select :category_ids, category.order(:name), :id, :name, {}, {multiple: true} %>
+    <%= f.collection_select :category_ids, Category.order(:name), :id, :name, {}, {multiple: true} %>
     </div>
   </div>
 

@@ -15,6 +15,11 @@ class RestaurantsController < ApplicationController
 
 		@reservation = Reservation.new
 		@reservation.restaurant = @restaurant
+		
+		@categories = []
+		@restaurant.category.each do |category|
+			@categories.push(category.name)
+		end
 	end
 
 	def new
