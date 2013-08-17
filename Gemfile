@@ -44,6 +44,7 @@ gem 'fog'
 gem 'simplecov', :require => false, :group => :test
 gem 'factory_girl_rails', :group => :test
 
+gem 'geocoder'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

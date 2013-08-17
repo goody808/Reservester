@@ -13,3 +13,9 @@
  *= require token-input-facebook
  *= require_tree .
  */
+#map-canvas {
+        margin: 0;
+        padding: 0;
+        height: 300px;
+        width: 300px;
+      }

@@ -2,12 +2,13 @@
 <div class = "row">
   <div class = "span12">
     <div class="page-header">
-      <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+      <h1><%=t '.title', :default => @restaurant.name %></h1>
     </div>
 <dl class="dl-horizontal">
   <div class = "row">
     <div class = "span2">
-      <dt><%= image_tag @restaurant.image_url(:masterhead) if @restaurant.image? %></dt>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=200x200&sensor=false&zoom=16&markers=#{@restaurant.latitude}%2C#{@restaurant.longitude}" %>
+      <!-- <dt><%= image_tag @restaurant.image_url(:masterhead) if @restaurant.image? %></dt> -->
     </div>
     <div class = "span3">
       
@@ -83,6 +84,10 @@
         </div>
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%  end  %>
+      </div>
+      <div class = "span4">
+        <div id = "map-canvas"></div>
+      </div>
       </div>
     </div>  
   </div>
