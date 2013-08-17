@@ -1,3 +1,6 @@
 == Reservester
 
-My interpr
+@Startup Institute (http://www.startupinstitute.com/) Summer 2013 I built a mock of open table called Reservester to gain better familiarity with ruby and the rails frame work. Guidelines were provided for the project but the implementation was open ended. 
+
+The app is still a work in progress with various features and Todos kept on an independent list. 
+
